@@ -92,20 +92,16 @@ function setup() {
 function draw() {
 
     background(0);
+    fill(255);
 
     // Movement, collision detection and drawing 
     b.move();
-
     b.checkCollision(p1);
     b.checkCollision(p2);
-
+    b.draw();
 
     p1.draw();
     p2.draw();
-
-    b.draw();
-
-
 
     // Movement of players 
     if (keyIsDown(UP_ARROW)) {
@@ -127,8 +123,6 @@ function draw() {
 
     // Write out score 
     score = p1.points + " - " + p2.points;
-
-    fill(255);
     text(score, width / 2, 50);
 
 }
